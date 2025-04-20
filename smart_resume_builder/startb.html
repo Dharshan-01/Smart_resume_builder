@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build Resume | Smart Resume Builder</title>
+    <link rel="stylesheet" href="clr.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Smart Resume Builder</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="ai_suggestions.html">AI Suggestions</a></li>
+                    <li><a href="chatbot.html">Resumo.ai</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="build_resume.html">Start Building</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Build Resume Section -->
+    <section id="build">
+        <div class="container">
+            <h2>Start Building Your Resume</h2>
+            <form action="build_resume.html" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="experience">Professional Experience:</label>
+                <textarea id="experience" name="experience" placeholder="Describe your work experience" required></textarea>
+
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" placeholder="List your skills" required>
+
+                <label for="education">Education:</label>
+                <input type="text" id="education" name="education" placeholder="Your Education Background" required>
+
+                <button type="submit" class="cta-button">Generate Resume</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Smart Resume Builder. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+**templates/basic.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Resume</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.4;
+        color: #333;
+      }
+      .name {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .contact {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+      }
+      h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        margin-top: 20px;
+      }
+      .experience-item {
+        margin-bottom: 10px;
+      }
+      .experience-item strong {
+        font-weight: bold;
+      }
+      .skills-section {
+        margin-top: 20px;
+      }
+      .education-section {
+        margin-top: 20px;
+      }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="name">{name}</div>
+        <div class="contact">{email}</div>
+
+        <h2>Experience</h2>
+        <div class="experience-item">
+          <strong>{experience}</strong>
+        </div>
+
+        <h2 class="skills-section">Skills</h2>
+        <div>{skills}</div>
+
+        <h2 class="education-section">Education</h2>
+        <div>{education}</div>
+    </div>
+</body>
+</html>
+```

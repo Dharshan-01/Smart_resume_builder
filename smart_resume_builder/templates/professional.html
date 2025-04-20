@@ -1,0 +1,78 @@
+**templates/professional.html:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+            color: #333;
+        }
+        .name {
+            font-size: 2.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .contact {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #34495e;
+            border-bottom: 2px solid #bdc3c7;
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+        .experience-item {
+            margin-bottom: 18px;
+        }
+        .experience-item strong {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .skills-section {
+            margin-top: 25px;
+        }
+        .skills-section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .skills-section li {
+            margin-bottom: 8px;
+        }
+        .education-section {
+            margin-top: 25px;
+        }
+        .education-section p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="name">{name}</div>
+        <div class="contact">{email}</div>
+
+        <h2>Experience</h2>
+        <div class="experience-item">
+             <strong>{experience}</strong>
+        </div>
+
+        <h2 class="skills-section">Skills</h2>
+        <div>{skills}</div>
+
+        <h2 class="education-section">Education</h2>
+        <div>{education}</div>
+    </div>
+</body>
+</html>
+```

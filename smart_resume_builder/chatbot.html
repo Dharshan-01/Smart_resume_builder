@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumo.ai Chatbot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('11631.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Overlay effect */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(255, 255, 255, 0.7); /* light transparent overlay */
+      z-index: -1;
+    }
+
+    .navbar {
+      background-color: #007bff;
+      padding: 15px 0;
+      text-align: center;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .chat-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 25px;
+    }
+
+    .chat-header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .intro-text {
+      font-size: 15px;
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .messages {
+      height: 320px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 10px 15px;
+      border-radius: 12px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .user {
+      background-color: #cce5ff;
+      text-align: right;
+      margin-left: auto;
+    }
+
+    .bot {
+      background-color: #e2f0d9;
+      text-align: left;
+      margin-right: auto;
+    }
+
+    .input-area {
+      display: flex;
+      gap: 10px;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    .input-area button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .input-area button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="suggestions.html">AI Suggestions</a>
+    <a href="chatbot.html">Resumo.ai</a>
+    <a href="about.html">About</a>
+    <a href="builder.html">Start Building</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-header">Resumo.ai Chatbot</div>
+    <div class="intro-text">
+      👋 Hi there! I'm Resumo.ai, your personal resume assistant.<br>
+      I can help you with resume building, formatting tips, suggestions, and more. Ask me anything!
+    </div>
+    <div class="messages" id="chatBox">
+      <div class="message bot">
+        Welcome! I’m here to help you craft a professional resume that gets noticed. 😊<br>
+        You can ask about templates, formatting, keywords, or anything resume-related!
+      </div>
+    </div>
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Type your message here...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Smart Resume Builder. All rights reserved.
+  </footer>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      if (!message) return;
+
+      addMessage("user", message);
+      input.value = "";
+
+      let response = "I'm here to assist you with resumes!";
+      const lower = message.toLowerCase();
+
+      if (lower.includes("hello") || lower.includes("hi")) {
+        response = "Hi there! How can I help you build or improve your resume today?";
+      } else if (lower.includes("template")) {
+        response = "We have various professional templates! Just head over to the 'Start Building' section.";
+      } else if (lower.includes("format")) {
+        response = "Make sure your resume is ATS-friendly — use clean formatting, clear headings, and no fancy graphics.";
+      } else if (lower.includes("keywords")) {
+        response = "Use keywords from the job description. I can help suggest some if you tell me the role!";
+      } else if (lower.includes("thanks") || lower.includes("thank you")) {
+        response = "You're welcome! Let me know if you need anything else.";
+      }
+
+      setTimeout(() => addMessage("bot", response), 500);
+    }
+
+    function addMessage(sender, text) {
+      const chatBox = document.getElementById("chatBox");
+      const msg = document.createElement("div");
+      msg.className = `message ${sender}`;
+      msg.textContent = text;
+      chatBox.appendChild(msg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

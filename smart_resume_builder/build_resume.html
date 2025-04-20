@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build Resume | Smart Resume Builder</title>
+    <link rel="stylesheet" href="clr.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Updated styling for the template selection */
+        .template-selection {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .template-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 200px;
+        }
+
+        .template-group label {
+            margin-bottom: 10px;
+            display: block;
+            text-align: left;
+        }
+
+        #build {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            margin-top: 20px;
+        }
+
+        #build h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #resumeForm {
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .template-group label input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            margin: 20px 0;
+        }
+
+        /* Add this to move template groups closer to the form */
+        #build {
+            display: flex;
+            flex-direction: column; /* Stack template groups and form vertically */
+            align-items: center; /* Center items horizontally */
+        }
+
+        .template-selection {
+            margin-bottom: 10px; /* Reduce space below template selection */
+            width: 100%; /* Make template selection container full width */
+            display: flex;
+            justify-content: space-around; /* Space out the template groups */
+        }
+
+        .template-group {
+            width: auto; /* Adjust width of template groups as needed */
+            margin-right: 0; /* Remove right margin */
+            margin-bottom: 20px; /* Add space below each group */
+        }
+
+        .form-container {
+            width: 400px; /* Set a max width for the form container */
+        }
+
+        /* Style for image */
+        .template-image {
+            width: 200px; /* Adjust as needed */
+            height: auto;
+            margin-top: 10px; /* Add space between radio buttons and image */
+            border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+            border-radius: 5px; /* Optional: Add rounded corners */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Smart Resume Builder</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="ai_suggestions.html">AI Suggestions</a></li>
+                    <li><a href="chatbot.html">Resumo.ai</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="build_resume.html">Start Building</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="template-selection">
+        <div class="template-group">
+            <label>
+                <input type="radio" name="template" value="classic" checked>
+                Classic Template
+            </label>
+            <img src="16322949_tp188-sasi-resume-06.jpg" alt="Classic Template Preview" class="template-image">
+        </div>
+        <div class="template-group">
+            <label>
+                <input type="radio" name="template" value="modern">
+                Modern Template
+            </label>
+            <img src="24235185_6887393.jpg" alt="Modern Template Preview" class="template-image">
+        </div>
+        <div class="template-group">
+            <label>
+                <input type="radio" name="template" value="minimal">
+                Minimal Template
+            </label>
+            <img src="8514022_3943468.jpg" alt="Minimal Template Preview" class="template-image">
+        </div>
+        <div class="template-group">
+            <label>
+                <input type="radio" name="template" value="professional">
+                Professional Template
+            </label>
+            <img src="12555770_5010691.jpg" alt="Professional Template Preview" class="template-image">
+        </div>
+        <div class="template-group">
+            <label>
+                <input type="radio" name="template" value="creative">
+                Creative Template
+            </label>
+            <img src="templates/2267222_306647-P8MSPO-608.jpg" alt="Creative Template Preview" class="template-image">
+        </div>
+        <div class="template-group">
+             <label>
+                <input type="radio" name="template" value="basic">
+                Basic Template
+            </label>
+            <img src="416725651_11643056.jpg" alt="Basic Template Preview" class="template-image">
+        </div>
+    </section>
+
+    <section id="build">
+        <div class="container">
+            <h2>Start Building Your Resume</h2>
+            <form id="resumeForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="experience">Professional Experience:</label>
+                <textarea id="experience" name="experience" placeholder="Describe your work experience" required></textarea>
+
+                <label for="skills">Skills:</label>
+                <input type="text" id="skills" name="skills" placeholder="List your skills" required>
+
+                <label for="education">Education:</label>
+                <input type="text" id="education" name="education" placeholder="Your Education Background" required>
+
+                <button type="button" id="generateResume" class="cta-button">Generate Resume</button>
+                <button type="button" id="downloadPdf" class="cta-button">Download as PDF</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Smart Resume Builder. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadPdfButton = document.getElementById('downloadPdf');
+            const generateResumeButton = document.getElementById('generateResume');
+            const resumeForm = document.getElementById('resumeForm');
+
+
+
+            downloadPdfButton.addEventListener('click', function() {
+                // Collect resume data from the form
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const experience = document.getElementById('experience').value;
+                const skills = document.getElementById('skills').value;
+                const education = document.getElementById('education').value;
+                const selectedTemplate = document.querySelector('input[name="template"]:checked')?.value;
+
+                if (!selectedTemplate) {
+                    alert('Please select a resume template before downloading.');
+                    return;
+                }
+
+                // Basic structure for the PDF content
+                let pdfContent = `Name: ${name}\n\n`;
+                pdfContent += `Email: ${email}\n\n`;
+                pdfContent += `Experience:\n${experience}\n\n`;
+                pdfContent += `Skills: ${skills}\n\n`;
+                pdfContent += `Education: ${education}\n\n`;
+                pdfContent += `Template: ${selectedTemplate}\n`;
+
+                // Create a new jsPDF instance
+                const pdf = new jspdf.jsPDF();
+
+                // Add the content to the PDF
+                pdf.text(pdfContent, 10, 10);
+
+                // Save the PDF with a filename
+                pdf.save('smart_resume.pdf');
+            });
+
+            generateResumeButton.addEventListener('click', function() {
+
+
+                // Step 1: Collect user input
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const experience = document.getElementById('experience').value;
+                const skills = document.getElementById('skills').value;
+                const education = document.getElementById('education').value;
+                const selectedTemplate = document.querySelector('input[name="template"]:checked')?.value;  // Use optional chaining
+
+                console.log('Name:', name);
+                console.log('Email:', email);
+                console.log('Experience:', experience);
+                console.log('Skills:', skills);
+                console.log('Education:', education);
+                console.log('Selected Template:', selectedTemplate);  // <--- Add this line
+
+
+                if (!selectedTemplate) {
+                    alert('Please select a resume template.');
+                    return; // Stop if no template is selected
+                }
+
+                // Step 2: Fetch the template HTML file
+                fetch(`templates/${selectedTemplate}.html`)
+                    .then(res => res.text())
+                    .then(template => {
+                        // Step 3: Replace placeholders
+                        const filledTemplate = template
+                            .replace(/{name}/g, name)
+                            .replace(/{email}/g, email)
+                            .replace(/{experience}/g, experience)
+                            .replace(/{skills}/g, skills)
+                            .replace(/{education}/g, education);
+
+                        console.log('Template Content:', filledTemplate);
+
+                        // Step 4: Open in new tab or window
+                        const newWindow = window.open('', '_blank');
+                        newWindow.document.open();
+                        newWindow.document.write(filledTemplate);
+                        newWindow.document.close();
+                    })
+                    .catch(err => {
+                        alert('Failed to load template. Check the file path and name.');
+                        console.error(err);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

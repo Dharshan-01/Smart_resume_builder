@@ -1,0 +1,63 @@
+**templates/classic.html:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Resume</title>
+    <style>
+        body {
+            font-family: serif;
+            line-height: 1.5;
+        }
+
+        .name {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+        }
+
+        .experience-item strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="name">{name}</div>
+        <div class="contact">{email}</div>
+
+        <h2>Experience</h2>
+        <div class="experience-item">
+             <strong>{experience}</strong>
+        </div>
+
+        <h2>Skills</h2>
+        <div>{skills}</div>
+
+        <h2>Education</h2>
+        <div>{education}</div>
+    </div>
+</body>
+</html>
+```
+

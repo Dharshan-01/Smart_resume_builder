@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us | Smart Resume Builder</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Background Image for About Section */
+        #about {
+            position: relative;
+            background-image: url('1768.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
+            color: white;
+        }
+
+        /* Overlay for reducing transparency */
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Adjust the opacity here (0 is fully transparent, 1 is fully opaque) */
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+            padding: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            margin-top: 20px;
+        }
+
+        /* Header Section Styles */
+        header {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Smart Resume Builder</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="ai_suggestions.html">AI Suggestions</a></li>
+                    <li><a href="chatbot.html">Resumo.ai</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="build_resume.html">Start Building</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We aim to make the job application process easier by helping you create a professional resume with minimal effort. Our platform uses advanced AI to help you highlight your strengths and tailor your resume to the right opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Smart Resume Builder. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

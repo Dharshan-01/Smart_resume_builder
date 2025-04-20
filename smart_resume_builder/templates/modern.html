@@ -1,0 +1,66 @@
+**templates/modern.html:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Resume</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        .name {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #0078d7;
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 2px solid #0078d7;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+
+        .experience-item {
+            margin-bottom: 15px;
+        }
+
+        .experience-item strong {
+            font-weight: bold;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <div class="name">{name}</div>
+        <div class="contact">{email}</div>
+
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <strong>{experience}</strong>
+        </div>
+
+        <h2>Skills</h2>
+        <div>{skills}</div>
+
+        <h2>Education</h2>
+        <div>{education}</div>
+    </div>
+</body>
+</html>
+```
